@@ -1,0 +1,47 @@
+<?php
+function register_schema() {
+    $schema['register_form'] = [
+        'fields' => [
+            'id' => [
+                'type' => 'serial',
+                'not null' => TRUE,
+            ],
+            'name' => [
+                'type' => 'varchar',
+                'length' => 255,
+            ],
+            'email' => [
+                'type' => 'varchar',
+                'length' => 255
+            ],
+            'password' => [
+                'type' => 'varchar',
+                'length' => 500
+            ],
+            'role' => [
+                'type' => 'varchar',
+                'length' => 255
+            ]
+            ],
+        'primary key' => ['id'],
+    ];
+
+    return $schema;
+}
+
+function register_install() {
+    // $rows = [
+    //     ['name' => 'Pranali' , 'mobile' => '7273650011'],
+    //     ['name' => 'Monal' , 'mobile' => '7273650003'],
+    // ];
+
+    $db_connection = \Drupal::database();
+
+    // if ($db_connection->schema()->tableExists('bmcoder_users'))
+    // {
+    //     foreach($rows as $row){
+    //         $db_connection->insert('bmcoder_users')->fields($row)->execute();
+    //     }
+    // }
+}
+

@@ -1,0 +1,100 @@
+<style>
+@media (min-width: 1170px) {
+  .container {
+    max-width: {{ container_width }}px;
+  }
+}
+{# Layout #}
+{% if header_width == 'header_width_full' %}
+.header-top .container,
+.header .container,
+.page-header .container {
+  width: 100%;
+  max-width: 100%;
+}
+{% endif %}
+{% if main_width == 'main_width_full' %}
+.main-wrapper .container {
+  width: 100%;
+  max-width: 100%;
+}
+{% endif %}
+
+{% if footer_width == 'footer_width_full' %}
+.footer-top footer .container,
+.footer-blocks .container,
+.footer-bottom-blocks .container,
+.footer-bottom .container {
+  width: 100%;
+  max-width: 100%;
+}
+{% endif %}
+{# Header #}
+.header-container {
+  padding-top: {{ header_main_padding_top }}rem;
+  padding-bottom: {{ header_main_padding_bottom }}rem;
+}
+.page-header {
+  padding-top: {{ header_page_padding_top }}rem;
+  padding-bottom: {{ header_page_padding_bottom }}rem; 
+}
+.region-page-header {
+  align-items: {{ header_page_content_position }};
+}
+{# Sidebar #}
+@media (min-width: 768px) {
+  .sidebar-left #main {
+    flex: 1 1 calc(100% - {{ sidebar_width_left}}%);
+  }
+  .sidebar-right #main {
+    flex: 1 1 calc(100% - {{ sidebar_width_right}}%);
+  }
+  .two-sidebar #main {
+    flex: 1 1 calc(100% - {{ sidebar_width_left}}% - {{ sidebar_width_right}}%);
+  }
+  #sidebar-left {
+    flex: 0 1 {{ sidebar_width_left}}%;
+  }
+  #sidebar-right {
+    flex: 0 1 {{ sidebar_width_right}}%;
+  }
+}
+.sidebar .block {
+  padding: {{ sidebar_padding }}px;
+  border-radius: {{ sidebar_radius }}px;
+  margin-bottom: {{ sidebar_margin }}rem;
+}
+.sidebar .block-title {
+  font-size: {{ sidebar_title_font_size }}rem;
+  text-transform: {{ sidebar_title_transform }};
+}
+{# Elements -> Page Title #}
+.page-title {
+  font-size: {{ page_title_size_mobile }};
+  text-transform: {{ page_title_transform }};
+}
+@media (min-width: 768px) {
+  .page-title {
+    font-size: {{ page_title_size_desktop }};
+  }
+}
+
+{% if highlight_author_comment %}
+.comment-by-author {
+  border: 1px solid var(--theme-color);
+  box-shadow: 0 0 3px var(--theme-color);
+}
+{% endif %}
+{% if scrolltotop_on %}
+.scrolltop {
+  {{ scrolltotop_position }}: 10px;
+  bottom: {{ scrolltotop_bottom }}px;
+  border-radius: {{ scrolltotop_icon_radius }};
+}
+{% endif %}
+a.button,
+.button {
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+</style>

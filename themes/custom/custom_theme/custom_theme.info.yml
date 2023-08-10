@@ -1,0 +1,26 @@
+name: Elearning Custom Theme
+type: theme
+description: 'Custom Theme for My E-learning Website.'
+package: Other
+core_version_requirement: ^8 || ^9
+libraries:
+  - custom/custom_theme/global-styling
+base theme: bartik
+regions:
+  header: Header
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  highlighted: Highlighted
+  featured_top: 'Featured top'
+  breadcrumb: Breadcrumb
+  content: Content
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  featured_bottom_first: 'Featured bottom first'
+  featured_bottom_second: 'Featured bottom second'
+  featured_bottom_third: 'Featured bottom third'
+  footer_first: 'Footer first'
+ 
+  footer_fifth: 'Footer fifth'

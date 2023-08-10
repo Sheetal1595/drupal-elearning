@@ -1,0 +1,53 @@
+
+
+<div class="views-col col-1" style="margin-left: 11%;width: 75%!important;">
+   <div class="views-field views-field-user-picture" style="display:none">
+      <div class="field-content">  <img loading="lazy" src="/drupal-elearning/sites/default/files/styles/medium/public/pictures/2022-10/6.jpg?itok=wMG7YU5g" width="140" height="180" alt="" typeof="foaf:Image">
+      </div>
+   </div>
+   <div class="views-field views-field-name"><span class="field-content">
+   
+    {% for rec in items %}
+        <h3 class="mb-0"> Username : <i></i>{{ rec.name }}</h3>
+        <h3 class="mb-0"> Email Id : <i></i>{{ rec.email }}</h3>
+    {% endfor %}
+ </div>
+   <div class="views-field views-field-field-trainer-designation">
+      <div class="field-content">
+         <h3>Applied Course<i></i></h3>
+      
+        
+   <table class="table">
+        <thead>
+            <tr>
+            <th scope="col" style="text-align: center;">Coure Name</th>
+            <th scope="col" style="text-align: center;">Applied Course</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+           {% for rec in data %}
+         <tr>
+            <td><h3 class="mb-0"><i></i>{{ rec.cname }}</h3></td>
+            <td><a href={{ rec.assesment }}>Course Details</a></td>
+          </tr>
+            
+        {% endfor %}
+        </span>
+
+        
+            
+            
+        </tbody>
+      
+        </table>
+      
+      </div>
+   </div>
+</div>
+
+
+
+<script>
+$("#block-login-link a").text("Logout");
+</script>

@@ -1,0 +1,16 @@
+contact.form:
+  path: '/contact-form'
+  defaults:
+    _title: 'User Contact form'
+    _form: 'Drupal\contact\Form\ContactForm'
+  requirements:
+    _permission: 'access content'
+
+
+contact.add_data:
+  path: 'display'
+  defaults:
+    _controller: 'Drupal\contact\Form\Controller\Display::showdata'
+    _title: 'Display'
+  requirements:
+    _permission: 'access content'

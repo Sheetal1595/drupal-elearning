@@ -1,0 +1,47 @@
+/*
+ * Footer
+ */
+ .footer .block-title {
+  position: relative;
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 300;
+  font-size: 1.6em;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+.footer .block-title::before,
+.footer .block-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  height: 2px;
+  background: var(--yellow);
+}
+.footer .block-title::before {
+  width: 30px;
+  bottom: 6px;
+}
+.footer .block-title::after {
+  width: 60px;
+  bottom: 0;
+}
+.footer a:hover {
+  color: var(--yellow);
+}
+.footer-block ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.footer-block li {
+  padding: 10px 0;
+  border-bottom: 1px solid #000000;
+}
+.footer-one img {
+  max-height: 80px;
+}
+.footer-four img {
+  display: block;
+  height: 40px;
+  width: auto;
+}

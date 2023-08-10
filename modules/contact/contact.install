@@ -1,0 +1,41 @@
+<?php
+function contact_schema() {
+    $schema['contact_us'] = [
+        'fields' => [
+            'id' => [
+                'type' => 'serial',
+                'not null' => TRUE,
+            ],
+            'name' => [
+                'type' => 'varchar',
+                'length' => 255
+            ],
+            'email' => [
+                'type' => 'varchar',
+                'length' => 255
+            ],
+            'mobile' => [
+                'type' => 'varchar',
+                'length' => 15
+            ],
+            'subject' => [
+                'type' => 'varchar',
+                'length' => 255
+            ],
+            'message' => [
+                'type' => 'varchar',
+                'length' => 255
+            ]
+            ],
+        'primary key' => ['id'],
+    ];
+
+    return $schema;
+}
+
+function contact_install() {
+
+    $db_connection = \Drupal::database();
+
+}
+

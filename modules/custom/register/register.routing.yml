@@ -1,0 +1,48 @@
+register.form:
+  path: '/register'
+  defaults:
+    _title: 'Elearning registeration form'
+    _form: 'Drupal\register\Form\RegisterForm'
+  requirements:
+    _permission: 'access content'
+
+
+login.form:
+  path: '/login'
+  defaults:
+    _title: 'Elearning Login Form'
+    _form: 'Drupal\register\Form\LoginForm'
+  requirements:
+    _permission: 'access content'
+   
+
+
+register.userprofile:
+  path: '/userprofile/{id}/{name}'
+  defaults:    
+    _controller: '\Drupal\register\Controller\RegisterController::userprofile'
+  requirements:
+    _permission: 'access content' 
+
+register.trainerprofile:
+  path: '/trainerprofile/{id}/{t_name}'
+  defaults:    
+    _controller: '\Drupal\register\Controller\RegisterController::trainerprofile'
+  requirements:
+    _permission: 'access content' 
+
+register.usercourse:
+  path: '/usercourse/{id}/{title}'
+  defaults:    
+    _controller: '\Drupal\register\Controller\RegisterController::usercourse'
+  requirements:
+    _permission: 'access content' 
+
+
+register.studentlist:
+  path: '/studentlist/{name}'
+  defaults:
+    _controller: '\Drupal\register\Controller\RegisterController::showdata'
+  requirements:
+    _permission: 'access content' 
+

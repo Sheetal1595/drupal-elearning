@@ -1,0 +1,101 @@
+version 8.0.0
+01 Jan 2021
++-----------------------------+
+# Initial release
+
+
+version 8.0.1
+04 Jan 2021
++-----------------------------+
+# Updated link color.
+
+
+version 8.0.2
+04 Jan 2021
++-----------------------------+
+# Minor bugs fixed.
+
+
+version 8.0.3
+09 Jan 2021
++-----------------------------+
+# Removed slider library.
+# Removed css/variables.css file.
+# Added footer bottom last block region.
+# Removed font icons.
+
+
+version 8.0.4
+13 Jan 2021
++-----------------------------+
+# Assigned default blocks regions.
+# Added fontAwesome 4 and 5 library.
+
+
+version 8.0.5
+18 Jan 2021
++-----------------------------+
+# Added social icons template file. This can be used in sub-themes.
+# Fixed Content top and content bottom block regions.
+
+
+version 8.0.6
+08 Feb 2021
++-----------------------------+
+# Modified comment template file.
+# Fixed minor known bugs.
+
+
+version 8.0.7
+08 April 2021
++-----------------------------+
+# Fixed minor known bugs.
+
+
+version 8.0.8
+01 May 2021
++-----------------------------+
+# Fixed minor known bugs.
+# Added shortcode for content width.
+# Added shortcode for horizontally centering an element.
+
+
+version 8.0.9
+04 May 2021
++-----------------------------+
+# Few minor improvements in user interface.
+
+
+version 8.0.10
+19 June 2021
++-----------------------------+
+# Fixed minor known bugs.
+
+
+version 8.1.0
+15 Dec 2021
++-----------------------------+
+# Added Bootstrap Icons v1.7.2 library: https://icons.getbootstrap.com
+# maintenance-page.html.twig now uses icon from thex theme.
+
+
+version 8.1.1
+23 Dec 2021
++-----------------------------+
+# Fixed minor known bugs.
+
+
+version 8.1.2
+08 Feb 2022
++-----------------------------+
+# Added two new css variables --color-text, --color-heading
+# Added new shortcode for light background "bg-light"
+# Changed scroll to top arrow icon path.
+
+
+version 8.2.0
+29 Aug 2022
++-----------------------------+
+# Added shortcode for text color - dark, light
+# Added shortcode section-small
+# minor changes and improvements.

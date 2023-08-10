@@ -1,0 +1,6 @@
+name: Hello World (The name to be displayed on the modules list in Drupal)
+description: First Custom Drupal 8 Module (Description of the module to be displayed)
+package: Custom - (Declaring that this is a custom module)
+type: module - (Declaring that this is a module)
+version: 1.0 - (Version of the module)
+core: 8.x||9.x - (The version of Drupal)

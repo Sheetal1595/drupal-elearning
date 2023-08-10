@@ -1,0 +1,58 @@
+/*
+ * Custom Shortcodes
+ */
+ .yellow {
+  color: var(--yellow);
+}
+
+/* 
+ * Buttons
+ */
+.link-button {
+  border-radius: 30px;
+  border: 4px solid var(--header-bg);
+  padding: 0.8rem 1.8rem;
+  transition: all 0.3s ease;
+  color: var(--header-top-bg);
+}
+
+.link-button:hover {
+  border: 4px solid var(--theme-color);
+}
+/* 
+ * Features
+ */
+.features {
+  display: flex;
+  gap: 2rem 0;
+}
+.feature {
+  background-color: #ffffff;
+  margin: 0;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+}
+.feature:hover {
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  transform: translateY(-10px);
+}
+.feature-icon {
+  margin-bottom: 1.5rem;
+  padding: 2rem;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #c4c6f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  transition: all 0.4s ease;
+}
+.feature:hover .feature-icon {
+  background-color: #ffffff;
+  box-shadow: 0 0 10px 2px #c4c6f2;
+}

@@ -1,0 +1,8 @@
+name: Elearning Custom Theme
+type: theme
+description: 'Custom Theme for My E-learning Website.'
+package: Other
+core_version_requirement: ^8 || ^9
+libraries:
+  - custom/custom_theme/global-styling
+base theme: bartik

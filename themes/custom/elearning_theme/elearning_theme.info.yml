@@ -1,0 +1,25 @@
+name: Elearning Theme
+type: theme
+description: 'Custom Theme for My E-learning Website.'
+package: Other
+core_version_requirement: ^8 || ^9
+
+base theme: false
+
+regions:
+  header: header
+  menu: menu
+  login_menu: login_menu
+  banner: banner
+  content: content
+  extra_content: extra_content
+  sidebar: sidebar
+  footer_first: footer_first
+  footer_second: footer_second
+  footer_third: footer_third
+  copyright: copyright
+libraries:
+  - elearning_theme/global-styling
+
+screenshot: logo.jpg
+

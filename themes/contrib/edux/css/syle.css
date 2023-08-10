@@ -1,0 +1,35 @@
+/*
+ * Frontpage
+ */
+.frontpage-main .block {
+  margin-bottom: 5rem;
+}
+.region-content-home .block {
+  padding: 4rem 0;
+}
+.region-content-home .block:nth-child(odd) {
+  margin-bottom: 10rem;
+}
+.region-content-home .block:nth-child(even) {
+  position: relative;
+  background: #f0f0f0;
+  padding: 0 0 4rem 0;
+}
+.region-content-home .block:nth-child(2)::before {
+  position: absolute;
+  content: '';
+  top: -10rem;
+  left: 0;
+  height: 10rem;
+  width: 100%;
+  background: #f0f0f0;
+  clip-path: polygon(0 0, 100% 90%, 100% 100%, 0% 100%);
+
+}
+/*
+ * Notice Styling
+ */
+.views-row {
+  padding: 1rem 0;
+  border-bottom: 1px solid #ddd;
+}

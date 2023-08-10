@@ -1,0 +1,59 @@
+<div>
+   <div class="layout layout--onecol">
+      <div class="layout__region layout__region--content">
+         <div>
+            <div class="layout layout--onecol">
+               <div class="layout__region layout__region--content">
+                  <div>
+                     <div>
+                        <div>  <a href="/drupal-elearning/home" hreflang="en"><img loading="lazy" src="/drupal-elearning/sites/default/files/styles/wide/public/2022-10/xbg_1.jpg.pagespeed.ic_._C6ebyFa8h%20%281%29_2.jpg?itok=MHEYLV1u" width="1090" height="728" alt="banner" typeof="foaf:Image" class="banner_cls"></a></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="layout layout--twocol-section layout--twocol-section--50-50 container">
+      <div class="layout__region layout__region--first">
+         <div>
+            <div>
+               <div class="video-embed-field-provider-youtube-playlist video-embed-field-responsive-video"><iframe width="854" height="480" frameborder="0" allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/videoseries?list=PLWKjhJtqVAbmUE5IqyfGYEYjrZBYzaT4m"></iframe></div>
+            </div>
+         </div>
+      </div>
+      <div class="layout__region layout__region--second">
+         <div>
+            <div>
+               {% for rec in items %}
+                <h4 class="mb-0"><i></i>{{ rec.title }}</h4>
+                <h4 class="mb-0"><i></i>Node Id : {{ rec.nid }}</h4>
+
+                
+            {% endfor %}
+            </div>
+         </div>
+         <div>
+            <div class="layout layout--onecol">
+               <div class="layout__region layout__region--content">
+                  <div>
+                     <div>
+                        <p class="para"><a class="test_btn" href="http://localhost/drupal-elearning/user/register">Apply Now</a></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="layout layout--threecol-section layout--threecol-section--33-34-33">
+   </div>
+   <div class="layout layout--onecol">
+      <div>
+      </div>
+   </div>
+</div>
+
+<script>
+$("#block-login-link a").text("Logout");
+</script>

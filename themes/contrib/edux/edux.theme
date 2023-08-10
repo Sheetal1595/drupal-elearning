@@ -1,0 +1,132 @@
+<?php
+/**
+ * @file
+ * Extra Functions for eduX theme.
+ */
+use Drupal\file\Entity\File;
+ /**
+ * Sanitise input urls.
+ */
+function santise_val_url($url) {
+	if ($url != '') {
+
+		// Sanitise (remove all illegal characters) from url.
+		$url = filter_var($url, FILTER_SANITIZE_URL);
+
+		// Validate url.
+		if (filter_var($url, FILTER_VALIDATE_URL) == TRUE) {
+			$url = $url;
+		} else {
+			$url = '#';
+		}
+		return $url;
+	}
+}
+function edux_preprocess_page(array &$variables) {
+	$variables['page_edux_path'] = drupal_get_path('theme', 'edux');
+
+	// Layout
+	$variables['container_width'] = theme_get_setting('container_width', 'edux');
+	$variables['header_width'] = theme_get_setting('header_width', 'edux');
+	$variables['main_width'] = theme_get_setting('main_width', 'edux');
+	$variables['footer_width'] = theme_get_setting('footer_width', 'edux');
+
+	// homepage slider
+	$variables['slider_show'] = theme_get_setting('slider_show', 'edux');
+	$variables['slider_code'] = theme_get_setting('slider_code', 'edux');
+	$variables['slider_image'] = theme_get_setting('slider_image', 'edux');
+	$slider_image_id = theme_get_setting('slider_image', 'edux');
+	if(!empty($slider_image_id)) {
+		$slider_image_file = File::load($slider_image_id[0]);
+		$slider_image_file->status = FILE_STATUS_PERMANENT;
+		$slider_image_file->save();
+		$slider_image_file_usage = \Drupal::service('file.usage');
+		$slider_image_file_usage->add($slider_image_file, 'edux', 'theme', $slider_image_id[0]);
+	};
+	if(!empty($slider_image_file)) {
+    $imageuri = $slider_image_file->getFileUri();
+    $variables['slider_image_path'] = file_create_url($imageuri);
+	};
+
+	// Header
+	$variables['header_main_padding_top'] = theme_get_setting('header_main_padding_top', 'edux');
+	$variables['header_main_padding_bottom'] = theme_get_setting('header_main_padding_bottom', 'edux');
+	$variables['header_page_padding_top'] = theme_get_setting('header_page_padding_top', 'edux');
+	$variables['header_page_padding_bottom'] = theme_get_setting('header_page_padding_bottom', 'edux');
+	$variables['header_page_content_position'] = theme_get_setting('header_page_content_position', 'edux');
+
+	// Sidebar
+	$variables['front_sidebar'] = theme_get_setting('front_sidebar', 'edux');
+	$variables['sidebar_width_left'] = theme_get_setting('sidebar_width_left', 'edux');
+	$variables['sidebar_width_right'] = theme_get_setting('sidebar_width_right', 'edux');
+	$variables['sidebar_padding'] = theme_get_setting('sidebar_padding', 'edux');
+	$variables['sidebar_radius'] = theme_get_setting('sidebar_radius', 'edux');
+	$variables['sidebar_margin'] = theme_get_setting('sidebar_margin', 'edux');
+	$variables['sidebar_title_font_size'] = theme_get_setting('sidebar_title_font_size', 'edux');
+	$variables['sidebar_title_transform'] = theme_get_setting('sidebar_title_transform', 'edux');
+
+	// content
+	$variables['rtl'] = theme_get_setting('rtl', 'edux');
+
+	// Social
+	$variables['all_icons_show'] = theme_get_setting('all_icons_show', 'edux');
+	$variables['facebook_url'] = santise_val_url(theme_get_setting('facebook_url', 'edux'));
+	$variables['twitter_url'] = santise_val_url(theme_get_setting('twitter_url', 'edux'));
+	$variables['instagram_url'] = santise_val_url(theme_get_setting('instagram_url', 'edux'));
+	$variables['linkedin_url'] = santise_val_url(theme_get_setting('linkedin_url', 'edux'));
+	$variables['youtube_url'] = santise_val_url(theme_get_setting('youtube_url', 'edux'));
+	$variables['vimeo_url'] = santise_val_url(theme_get_setting('vimeo_url', 'edux'));
+  $variables['telegram_url'] = santise_val_url(theme_get_setting('telegram_url', 'edux'));
+  $variables['whatsapp_url'] = santise_val_url(theme_get_setting('whatsapp_url', 'edux'));
+  $variables['github_url'] = santise_val_url(theme_get_setting('github_url', 'edux'));
+	$variables['vk_url'] = santise_val_url(theme_get_setting('vk_url', 'edux'));
+
+	// Typography
+
+	// Element -> Page title
+	$variables['page_title_size_desktop'] = theme_get_setting('page_title_size_desktop', 'edux');
+	$variables['page_title_size_mobile'] = theme_get_setting('page_title_size_mobile', 'edux');
+	$variables['page_title_transform'] = theme_get_setting('page_title_transform', 'edux');
+
+	// Components -> scroll to top
+	$variables['scrolltotop_on'] = theme_get_setting('scrolltotop_on', 'edux');
+	$variables['scrolltotop_icon_style'] = theme_get_setting('scrolltotop_icon_style', 'edux');
+	$variables['scrolltotop_icon_size'] = theme_get_setting('scrolltotop_icon_size', 'edux');
+	$variables['scrolltotop_position'] = theme_get_setting('scrolltotop_position', 'edux');
+	$variables['scrolltotop_bottom'] = theme_get_setting('scrolltotop_bottom', 'edux');
+	$variables['scrolltotop_icon_radius'] = theme_get_setting('scrolltotop_icon_radius', 'edux');
+	
+	// Test this for comment processor
+	$variables['highlight_author_comment'] = theme_get_setting('highlight_author_comment', 'edux');
+
+	// Test variables
+	$variables['bgcolor'] = theme_get_setting('bgcolor', 'edux');
+}
+
+function edux_preprocess_html(&$variables) {
+  $variables['edux_path'] = drupal_get_path('theme', 'edux');
+	$variables['font_src'] = theme_get_setting('font_src', 'edux');
+	$variables['styling'] = theme_get_setting('styling', 'edux');
+	$variables['styling_code'] = theme_get_setting('styling_code', 'edux');
+}
+/**
+ * Node preprocess.
+ */
+function edux_preprocess_node(array &$variables) {
+	$variables['node_author_pic'] = theme_get_setting('node_author_pic', 'edux');
+	$variables['node_tags'] = theme_get_setting('node_tags', 'edux');
+}
+
+/* *
+ * Comment preprocess.
+ */
+function edux_preprocess_comment(array &$variables) {
+	$variables['comment_user_pic'] = theme_get_setting('comment_user_pic', 'edux');
+}
+
+/* *
+ * Breadcrumb preprocess.
+ */
+function edux_preprocess_breadcrumb(&$variables) {
+	$variables['breadcrumb_icon_style'] = theme_get_setting('breadcrumb_icon_style', 'edux');
+}

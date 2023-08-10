@@ -1,0 +1,53 @@
+<section>
+    <div class="container">
+        <div class="row my-5">
+            <div class="col-md-12">
+                <h3 class="text-center text-danger"><b><u>Your details</u></b></h3>
+            </div>
+            <div class="col-md-12 p-3">
+                <table class="table table-bordered" style="background-color:#e6f5fa;">
+                {% for rec in test %}
+                    <tr>
+                        <th width="30%">Age</th>
+                        <td width="2%">:</td>
+                        <td>{{ rec.age }}</td>
+                    </tr>
+                    <tr>
+                        <th width="30%">E-mail id</th>
+                        <td width="2%">:</td>
+                        <td>{{ rec.email }}</td>
+                    </tr>
+                    <tr>
+                        <th width="30%">Medical History</th>
+                        <td width="2%">:</td>
+                        <td>{{ rec.medicalhistory }}</td>
+                    </tr>
+                    <tr>
+                        <th width="30%">Department which is referring to	</th>
+                        <td width="2%">:</td>
+                        <td>{{ rec.department }}</td>
+                    </tr>
+                    <tr>
+                        <th width="30%">Doctor that you are referring</th>
+                        <td width="2%">:</td>
+                        <td>{{ rec.doctorname }}</td>
+                    </tr>
+                    <tr>
+                        <th width="30%">Guardian Name</th>
+                        <td width="2%">:</td>
+                        <td>{{ rec.guardianname }}</td>
+                    </tr>
+                    <tr>
+                        <th width="30%">Guardian Phone</th>
+                        <td width="2%">:</td>
+                        <td>{{ rec.guardianphone }}</td>
+                    </tr>    
+                {% endfor %}       
+                </table>
+            </div>
+            {% for rec in test %}
+                <p>Do you want to edit this details? <a href="../edit_profile/{{ rec.id }}"> Click here</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,8 @@
+name: Enquiry custom registeration form
+description: Creates a page showing "Registeration form".
+package: Custom
+
+type: module
+core: 8.x
+
+core_version_requirement: ^8 || ^9

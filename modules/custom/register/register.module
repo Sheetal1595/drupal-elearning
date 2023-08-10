@@ -1,0 +1,29 @@
+<?php
+    /**
+     * Implements hook_theme().
+    */
+    
+    function register_theme($existing, $type, $theme, $path){   
+        return [
+            'userprofilepage' => [
+                'variables' => array(
+                    'items' => NULL,
+                    'data' => NULL,
+                    'title' => ''
+                )
+            ],
+            'trainerprofilepage' => [
+                'variables' => array(
+                    'items' => NULL,
+                    'title' => ''
+                )
+            ],
+            'usercoursepage' => [
+                'variables' => array(
+                    'items' => [],
+                    'title' => ''
+                )
+            ],
+          ];        
+    }
+?>
